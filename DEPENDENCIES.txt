@@ -1,0 +1,21 @@
+Зависимости для DataDownloader.py и ParquetProfiler.py
+
+Общие пакеты:
+- requests
+- pandas
+- pyarrow (или fastparquet для записи/чтения parquet)
+- ydata-profiling (профилирование малых файлов)
+- skimpy (профилирование средних файлов)
+- whylogs (профилирование больших файлов; требует pyarrow)
+
+Установка локально (пример с pip):
+python -m pip install --upgrade pip
+python -m pip install requests pandas pyarrow ydata-profiling skimpy whylogs
+
+Установка в Google Colab (ячейка с !pip):
+!pip install --upgrade pip
+!pip install requests pandas pyarrow ydata-profiling skimpy whylogs
+
+Примечания:
+- Если pyarrow недоступен, можно вместо него установить fastparquet: python -m pip install fastparquet
+- whylogs использует pyarrow для чтения parquet; без pyarrow профилирование whylogs работать не будет.
